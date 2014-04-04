@@ -60,20 +60,15 @@ A Bearer token will be returned which will be required when making requests. A n
 
 ```json
 {
- "receipients":[
-       {
-        "reference":"demoraa",
-        "send_to":"018555808797"
-        }
-      ],
- "reference":"demo",
- "documents":[
-       {
-         "file_name":"testing.txt",
-         "file_data":"VGhpcyBpcyBqdXN0IGEgdGVz......",         
-         "order":"0"
-       }
-     ]
+  "receipients":[
+    {"fax_number":"13862345678"}
+   ],
+  "documents":[
+    {
+     "file_name":"myfile.pdf",
+     "file_data":"bas64 encode string content of myfile.pdf","order":0
+    }
+   ]
 }
 ```
 
@@ -82,20 +77,17 @@ A Bearer token will be returned which will be required when making requests. A n
 
 ```json
 {
-  "request_reference":"3452e932897d4890aac9a79d53b3805f",
-  "result":
-   {
-    "receipient_count":1,
-    "document_count":1,
-    "result":
-     [{
-      "reference":"0cabc8366cdc471ea94dd7284e4b4e5a",
-      "send_to":"018555808797",
-      "status":"1"
-     }]
-   },
-  "request_status":"1",
- 
+  "sid":"d4b7b6b6914b45fa974e155b9a0af837",
+  "result":{
+    "total_documents":1,
+    "receipients":[
+      {
+        "mid":"ddea632371464331876ed5182b9678c6",
+        "fax_number":"13862345678",
+        "status":"1"
+      }
+    ]
+  }
 }
 ```
 

@@ -6,16 +6,21 @@ require_once '/../init_autoloader.php';
 
 // Build a receipient list
 $receipients = array(
-	new ReceipientEntity(array('fax_number'=>'18555808797')),
-	new ReceipientEntity(array('fax_number'=>'18555808797'))
+	new ReceipientEntity(array('fax_number'=>'13862345678')),
+    new ReceipientEntity(array('fax_number'=>'13862345679'))		
 );
 
 // Attach some documents
 $documents = array(
 	new DocumentEntity(array(
-		'file_name'=>'test.txt',
-		'file_data' => 'fdsafdsa',
+		'file_name'=>'myfile.pdf',
+		'file_data' => 'bas64 encode string content of myfile.pdf',
 		'order'=> 0		
+	)),
+    new DocumentEntity(array(
+		'file_name'=>'myfile2.pdf',
+		'file_data' => 'bas64 encode string content of myfile2.pdf',
+		'order'=> 1		
 	))
 );
 
