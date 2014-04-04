@@ -58,6 +58,8 @@ class Client{
 		curl_setopt($curl, CURLOPT_HEADER, false);
 		curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "GET");
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
 		
 			
 		$result = curl_exec($curl);
@@ -106,7 +108,8 @@ class Client{
 		curl_setopt($curl, CURLOPT_HEADER, false);
 		curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "GET");
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-		
+		curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
 			
 		$result = curl_exec($curl);
 		
@@ -149,6 +152,8 @@ class Client{
 		curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($curl, CURLOPT_POSTFIELDS, $json_payload);
+		curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
 		 
 		$result = curl_exec($curl);
 		
@@ -213,6 +218,8 @@ class Client{
 	  curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
 	  curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 	  curl_setopt($curl, CURLOPT_POSTFIELDS, $json_payload);
+	  curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+	  curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
 	  
 	  $result = curl_exec($curl);
 	  
