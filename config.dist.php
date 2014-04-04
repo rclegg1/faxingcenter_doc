@@ -1,5 +1,9 @@
 <?php
 
+/**
+  Change this file name to config.php and update your information below in order to use examples
+ */
+
 $configs = array(); 
 
 $configs['auth'] = array(
