@@ -46,7 +46,7 @@ class Client{
 			$qry_str.="&mid={$mid}";
 		}
 		
-		$url = 'http://api.localhost/api/rest/fax/status' . $qry_str;
+		$url = 'https://api.faxingcenter/api/rest/fax/status' . $qry_str;
 		
 		$header = array(
 				'Content-Type:application/json',
@@ -94,7 +94,7 @@ class Client{
 				}
 		}
 		
-		$url = 'http://api.localhost/api/rest/fax/search?' . implode('&', $qry_str);
+		$url = 'https://api.faxingcenter.com/api/rest/fax/search?' . implode('&', $qry_str);
 		
 		$header = array(
 				'Content-Type:application/json',
@@ -133,7 +133,7 @@ class Client{
 		
 		$curl = curl_init();
 		 
-		$url = 'http://api.localhost/api/rest/fax/send';
+		$url = 'https://api.faxingcenter.com/api/rest/fax/send';
 		 
 		$json_payload = json_encode($entity);
 		
@@ -197,7 +197,7 @@ class Client{
 	  
 	  $curl = curl_init();
 	  
-	  $url = 'http://api.faxingcenter.com/oauth';
+	  $url = 'https://api.faxingcenter.com/oauth';
 	  
 	  
 	  $json_payload = json_encode($this->authorize_entity);
