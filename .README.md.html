@@ -519,11 +519,61 @@ function setDocumentScrollTop(ypos)
 </pre>
 </div> 
 <hr />
-<h3> <a name="user-content-get-the-status-of-a-specific-fax-job--send-id-sid" class="anchor" href="..md.html#get-the-status-of-a-specific-fax-job--send-id-sid"><span class="octicon octicon-link"></span></a>Get the status of a specific fax job / send id (sid)</h3> 
+<h3> <a name="user-content-get-the-status-of-a-specific-fax-job" class="anchor" href="..md.html#get-the-status-of-a-specific-fax-job"><span class="octicon octicon-link"></span></a>Get the status of a specific fax job</h3> 
+<p><strong>HTTP Method:</strong> <code>GET</code></p> 
+<p><strong>Endpoint:</strong> <code>https://api.faxingcenter.com/api/rest/fax/status</code></p> 
+<p><strong>HTTP Headers:</strong></p> 
+<pre><code>  Accept: application/json
+  Content-type: application/json
+</code></pre> 
+<p>The method supports two parameters</p> 
+<table> 
+ <thead>
+  <tr> 
+   <th align="center">Parameter</th> 
+   <th align="center">Required</th> 
+   <th align="left">Description</th> 
+  </tr>
+ </thead> 
+ <tbody> 
+  <tr> 
+   <td align="center">sid</td> 
+   <td align="center">Yes</td> 
+   <td align="left">Send Id. Required for each request and will return all receipient messages for that send id</td> 
+  </tr> 
+  <tr> 
+   <td align="center">mid</td> 
+   <td align="center">No</td> 
+   <td align="left">Message Id. Will return the specific receipient message</td> 
+  </tr> 
+ </tbody> 
+</table>
+<p><strong>Example</strong></p> 
+<p><code>https://api.faxingcenter.com/api/rest/fax/status?sid=d4b7b6b6914b45fa974e155b9a0af837</code></p> 
+<p><strong>Result</strong></p> 
+<div class="highlight highlight-json">
+ <pre><span class="p">{</span><span class="nt">&quot;results&quot;</span><span class="p">:[</span>
+    <span class="p">{</span><span class="nt">&quot;sid&quot;</span><span class="p">:</span><span class="s2">&quot;4bb8dd16063f43f6927e8923bd08b30a&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">Send</span> <span class="err">Id</span>
+     <span class="nt">&quot;mid&quot;</span><span class="p">:</span><span class="s2">&quot;e03be073902c4e7e998ce3a4b84cf694&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">Message</span> <span class="err">Id</span>
+     <span class="nt">&quot;fax_number&quot;</span><span class="p">:</span><span class="s2">&quot;18555808797&quot;</span><span class="p">,</span>               
+     <span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;sent_on&quot;</span><span class="p">:</span><span class="s2">&quot;2014-04-08T17:26:25-04:00&quot;</span><span class="p">,</span>    
+   <span class="p">}],</span>
+  <span class="nt">&quot;pager&quot;</span><span class="p">:{</span>
+      <span class="nt">&quot;pageCount&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;itemCountPerPage&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span>
+      <span class="nt">&quot;first&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;current&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;last&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;currentItemCount&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;totalItemCount&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;firstItemNumber&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;lastItemNumber&quot;</span><span class="p">:</span><span class="mi">1</span>
+<span class="p">}}</span>
+</pre>
+</div> 
 <hr />
-<h3> <a name="user-content-get-the-status-of-a-specific-receipient--message-id-mid" class="anchor" href="..md.html#get-the-status-of-a-specific-receipient--message-id-mid"><span class="octicon octicon-link"></span></a>Get the status of a specific receipient / message id (mid)</h3> 
-<hr />
-<h3> <a name="user-content-search-for-fax-jobs-a-fax" class="anchor" href="..md.html#search-for-fax-jobs-a-fax"><span class="octicon octicon-link"></span></a>Search for fax jobs a Fax</h3> 
+<h3> <a name="user-content-search-for-fax-jobs" class="anchor" href="..md.html#search-for-fax-jobs"><span class="octicon octicon-link"></span></a>Search for fax jobs</h3> 
 <hr />
 <h3> <a name="user-content-fax-message-status-codes" class="anchor" href="..md.html#fax-message-status-codes"><span class="octicon octicon-link"></span></a>Fax message status codes</h3> 
 <table> 

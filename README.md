@@ -93,15 +93,55 @@ A Bearer token will be returned which will be required when making requests. A n
 
 ---
 
-###Get the status of a specific fax job / send id (sid)
+###Get the status of a specific fax job 
+
+
+**HTTP Method:** `GET`
+
+**Endpoint:** `https://api.faxingcenter.com/api/rest/fax/status`
+
+**HTTP Headers:**
+```
+  Accept: application/json
+  Content-type: application/json
+``` 
+The method supports two parameters
+
+| Parameter | Required | Description |
+|:---:|:---:|:---|
+| sid | Yes | Send Id. Required for each request and will return all receipient messages for that send id |
+| mid | No | Message Id. Will return the specific receipient message |
+
+**Example**
+
+`https://api.faxingcenter.com/api/rest/fax/status?sid=d4b7b6b6914b45fa974e155b9a0af837`
+
+**Result**
+
+```json
+{"results":[
+	{"sid":"4bb8dd16063f43f6927e8923bd08b30a", // Send Id
+     "mid":"e03be073902c4e7e998ce3a4b84cf694", // Message Id
+     "fax_number":"18555808797",               
+     "status":"1",
+     "sent_on":"2014-04-08T17:26:25-04:00",    
+   }],
+  "pager":{
+	  "pageCount":1,
+	  "itemCountPerPage":100,
+	  "first":1,
+	  "current":1,
+	  "last":1,
+	  "currentItemCount":1,
+	  "totalItemCount":1,
+	  "firstItemNumber":1,
+	  "lastItemNumber":1
+}}
+```
 
 ---
 
-###Get the status of a specific receipient / message id (mid)
-
----
-
-###Search for fax jobs a Fax
+###Search for fax jobs 
 
 ---
 
