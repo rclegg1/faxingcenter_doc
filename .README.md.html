@@ -557,7 +557,10 @@ function setDocumentScrollTop(ypos)
      <span class="nt">&quot;mid&quot;</span><span class="p">:</span><span class="s2">&quot;e03be073902c4e7e998ce3a4b84cf694&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">Message</span> <span class="err">Id</span>
      <span class="nt">&quot;fax_number&quot;</span><span class="p">:</span><span class="s2">&quot;18555808797&quot;</span><span class="p">,</span>               
      <span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
-     <span class="nt">&quot;sent_on&quot;</span><span class="p">:</span><span class="s2">&quot;2014-04-08T17:26:25-04:00&quot;</span><span class="p">,</span>    
+     <span class="nt">&quot;sent_on&quot;</span><span class="p">:</span><span class="s2">&quot;2014-04-08T17:26:25-04:00&quot;</span><span class="p">,</span> 
+     <span class="nt">&quot;attempts&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;pages&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+     <span class="s2">&quot;received_on&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>   
    <span class="p">}],</span>
   <span class="nt">&quot;pager&quot;</span><span class="p">:{</span>
       <span class="nt">&quot;pageCount&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
@@ -574,6 +577,71 @@ function setDocumentScrollTop(ypos)
 </div> 
 <hr />
 <h3> <a name="user-content-search-for-fax-jobs" class="anchor" href="..md.html#search-for-fax-jobs"><span class="octicon octicon-link"></span></a>Search for fax jobs</h3> 
+<p><strong>HTTP Method:</strong> <code>GET</code></p> 
+<p><strong>Endpoint:</strong> <code>https://api.faxingcenter.com/api/rest/fax/search</code></p> 
+<p><strong>HTTP Headers:</strong></p> 
+<pre><code>  Accept: application/json
+  Content-type: application/json
+</code></pre> 
+<p>The method supports two parameters</p> 
+<table> 
+ <thead>
+  <tr> 
+   <th align="center">Parameter</th> 
+   <th align="center">Required</th> 
+   <th align="left">Description</th> 
+  </tr>
+ </thead> 
+ <tbody> 
+  <tr> 
+   <td align="center">from_date</td> 
+   <td align="center">Yes</td> 
+   <td align="left">eg: 2014-01-30T00:00:00-5:00</td> 
+  </tr> 
+  <tr> 
+   <td align="center">to_date</td> 
+   <td align="center">Yes</td> 
+   <td align="left">eg: 2014-01-30T23:59:59-5:00</td> 
+  </tr> 
+  <tr> 
+   <td align="center">fax_number</td> 
+   <td align="center">No</td> 
+   <td align="left">Filter by fax number</td> 
+  </tr> 
+  <tr> 
+   <td align="center">status</td> 
+   <td align="center">No</td> 
+   <td align="left">Filter by status</td> 
+  </tr> 
+ </tbody> 
+</table>
+<p><strong>Example</strong></p> 
+<p><code>http://api.faxingcenter.com/api/rest/fax/search?from_date=04%2F01%2F2014&amp;to_date=04%2F30%2F2014&amp;fax_number=18555808797&amp;status=1</code></p> 
+<p><strong>Result</strong></p> 
+<div class="highlight highlight-json">
+ <pre><span class="p">{</span><span class="nt">&quot;results&quot;</span><span class="p">:[</span>
+    <span class="p">{</span><span class="nt">&quot;sid&quot;</span><span class="p">:</span><span class="s2">&quot;4bb8dd16063f43f6927e8923bd08b30a&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">Send</span> <span class="err">Id</span>
+     <span class="nt">&quot;mid&quot;</span><span class="p">:</span><span class="s2">&quot;e03be073902c4e7e998ce3a4b84cf694&quot;</span><span class="p">,</span> <span class="err">//</span> <span class="err">Message</span> <span class="err">Id</span>
+     <span class="nt">&quot;fax_number&quot;</span><span class="p">:</span><span class="s2">&quot;18555808797&quot;</span><span class="p">,</span>               
+     <span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;sent_on&quot;</span><span class="p">:</span><span class="s2">&quot;2014-04-08T17:26:25-04:00&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;attempts&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;pages&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+     <span class="s2">&quot;received_on&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+   <span class="p">}],</span>
+  <span class="nt">&quot;pager&quot;</span><span class="p">:{</span>
+      <span class="nt">&quot;pageCount&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;itemCountPerPage&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span>
+      <span class="nt">&quot;first&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;current&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;last&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;currentItemCount&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;totalItemCount&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;firstItemNumber&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;lastItemNumber&quot;</span><span class="p">:</span><span class="mi">1</span>
+<span class="p">}}</span>
+</pre>
+</div> 
 <hr />
 <h3> <a name="user-content-fax-message-status-codes" class="anchor" href="..md.html#fax-message-status-codes"><span class="octicon octicon-link"></span></a>Fax message status codes</h3> 
 <table> 

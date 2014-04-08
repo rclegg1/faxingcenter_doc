@@ -124,7 +124,10 @@ The method supports two parameters
      "mid":"e03be073902c4e7e998ce3a4b84cf694", // Message Id
      "fax_number":"18555808797",               
      "status":"1",
-     "sent_on":"2014-04-08T17:26:25-04:00",    
+     "sent_on":"2014-04-08T17:26:25-04:00", 
+     "attempts": "",
+     "pages": ""
+     "received_on": ""   
    }],
   "pager":{
 	  "pageCount":1,
@@ -142,6 +145,55 @@ The method supports two parameters
 ---
 
 ###Search for fax jobs 
+
+
+**HTTP Method:** `GET`
+
+**Endpoint:** `https://api.faxingcenter.com/api/rest/fax/search`
+
+**HTTP Headers:**
+```
+  Accept: application/json
+  Content-type: application/json
+``` 
+The method supports two parameters
+
+| Parameter | Required | Description |
+|:---:|:---:|:---|
+| from_date | Yes | eg: 2014-01-30T00:00:00-5:00 |
+| to_date | Yes | eg: 2014-01-30T23:59:59-5:00 |
+| fax_number | No | Filter by fax number |
+| status | No | Filter by status |
+
+**Example**
+
+`http://api.faxingcenter.com/api/rest/fax/search?from_date=04%2F01%2F2014&to_date=04%2F30%2F2014&fax_number=18555808797&status=1`
+
+**Result**
+
+```json
+{"results":[
+	{"sid":"4bb8dd16063f43f6927e8923bd08b30a", // Send Id
+     "mid":"e03be073902c4e7e998ce3a4b84cf694", // Message Id
+     "fax_number":"18555808797",               
+     "status":"1",
+     "sent_on":"2014-04-08T17:26:25-04:00",
+     "attempts": "",
+     "pages": ""
+     "received_on": ""
+   }],
+  "pager":{
+	  "pageCount":1,
+	  "itemCountPerPage":100,
+	  "first":1,
+	  "current":1,
+	  "last":1,
+	  "currentItemCount":1,
+	  "totalItemCount":1,
+	  "firstItemNumber":1,
+	  "lastItemNumber":1
+}}
+```
 
 ---
 
