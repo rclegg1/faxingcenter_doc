@@ -1,7 +1,7 @@
 Faxing Center Production Fax Api
 ========
 
-Before you can access the api you must contact the [FaxingCenter](https://www.faxingcenter.com/production_fax) and have been issued a client id and client secret token. 
+Before you can access the api you must contact the [FaxingCenter](https://www.faxingcenter.com/contact-us) and have been issued a client id and client secret token. 
 
 
 ##Authentication using OAuth 2.0
