@@ -104,6 +104,7 @@ A Bearer token will be returned which will be required when making requests. A n
 ```
   Accept: application/json
   Content-type: application/json
+  Authorization: Bearer 3dab7fff9c41f905faa0fdaaa733488acfac4dcf93a6
 ``` 
 The method supports two parameters
 
@@ -155,6 +156,7 @@ The method supports two parameters
 ```
   Accept: application/json
   Content-type: application/json
+  Authorization: Bearer 3dab7fff9c41f905faa0fdaaa733488acfac4dcf93a6
 ``` 
 The method supports two parameters
 
@@ -213,6 +215,7 @@ The method supports two parameters
 ```
 HTTP/1.1 406 Not Acceptable
 Content-type: application/problem+json
+Authorization: Bearer 3dab7fff9c41f905faa0fdaaa733488acfac4dcf93a6
 ```
 
 ```json
