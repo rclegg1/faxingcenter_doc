@@ -1,0 +1,11 @@
+{
+  "receipients":[
+    {"fax_number":"18553318958"}
+   ],
+  "documents":[
+    {
+     "file_name":"myfile.pdf",
+     "file_data":"bas64 encode string content of myfile.pdf","order":0
+    }
+   ]
+}
